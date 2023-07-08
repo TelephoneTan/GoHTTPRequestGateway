@@ -1,4 +1,4 @@
-module GoHTTPRequestGateway
+module github.com/TelephoneTan/GoHTTPRequestGateway
 
 go 1.20
 
