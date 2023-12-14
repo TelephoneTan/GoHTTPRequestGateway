@@ -39,7 +39,7 @@ var manager = server.NewResourceManager(func() types.WordList {
 				pack.incomingRequest = http.NewRequest().Deserialize(reqJSON)
 				goto hijack
 			},
-			Reply: func(w httpGo.ResponseWriter, pack packet) {
+			Reply: func(w httpGo.ResponseWriter, toCDN func() bool, pack packet) {
 				if pack.bad {
 					w.WriteHeader(httpGo.StatusBadRequest)
 					return
